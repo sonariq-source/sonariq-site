@@ -120,9 +120,9 @@
       var bw = W / n;
       if (!grad) {
         grad = ctx.createLinearGradient(0, 0, W, 0);
-        grad.addColorStop(0, "rgba(255,107,94,0.85)");
-        grad.addColorStop(0.5, "rgba(192,132,252,0.85)");
-        grad.addColorStop(1, "rgba(34,211,238,0.85)");
+        grad.addColorStop(0, "rgba(163,230,53,0.85)");
+        grad.addColorStop(0.5, "rgba(74,222,128,0.85)");
+        grad.addColorStop(1, "rgba(52,211,153,0.85)");
       }
       ctx.fillStyle = grad;
       for (var i = 0; i < n; i++) {
