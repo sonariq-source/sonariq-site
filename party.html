@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the party on Sonariq</title>
+<meta name="description" content="Join a Listen Together party in the Sonariq app.">
+<meta name="theme-color" content="#0d0a12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='10' width='3.2' height='12' rx='1.6' fill='%23ff6b5e'/%3E%3Crect x='9.2' y='5' width='3.2' height='22' rx='1.6' fill='%23c084fc'/%3E%3Crect x='14.4' y='1' width='3.2' height='30' rx='1.6' fill='%23ffffff'/%3E%3Crect x='19.6' y='8' width='3.2' height='16' rx='1.6' fill='%2322d3ee'/%3E%3Crect x='24.8' y='4' width='3.2' height='24' rx='1.6' fill='%23c084fc'/%3E%3C/svg%3E">
+</head>
+<body>
+<div class="center-page">
+  <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div>
+  <div class="center-card">
+    <a class="brand" href="/" aria-label="Sonariq home">
+      <svg class="wave" viewBox="0 0 32 32" fill="#fff" aria-hidden="true">
+        <rect x="4" y="10" width="3.2" height="12" rx="1.6"/><rect x="9.2" y="5" width="3.2" height="22" rx="1.6"/><rect x="14.4" y="1" width="3.2" height="30" rx="1.6"/><rect x="19.6" y="8" width="3.2" height="16" rx="1.6"/><rect x="24.8" y="4" width="3.2" height="24" rx="1.6"/>
+      </svg>
+      Sonariq
+    </a>
+    <div id="opening">
+      <div class="loader-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <h1>Joining the party…</h1>
+      <p>Taking you straight into Listen Together.</p>
+    </div>
+    <div id="fallback" class="fallback">
+      <h1>Get Sonariq to join this party</h1>
+      <p>A friend invited you to listen together. Open the invite in the Sonariq app — or download Sonariq free to join in.</p>
+      <button id="retry" class="btn btn-ghost">Try opening the app again</button>
+      <a class="btn btn-primary" href="https://github.com/sonariq-source/Sonariq/releases/latest" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+        Download Sonariq free
+      </a>
+      <p class="tiny">Free forever · No account needed · Open source</p>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  "use strict";
+  /* The party code comes from the /party/:code rewrite; also accept ?c= as a fallback. */
+  var parts = window.location.pathname.split("/").filter(Boolean);
+  var code = (parts[0] === "party" && parts[1]) ? parts[1] : null;
+  if (!code || /\.html?$/i.test(code)) {
+    code = new URLSearchParams(window.location.search).get("c");
+  }
+  var opening = document.getElementById("opening");
+  var fallback = document.getElementById("fallback");
+
+  function openApp() {
+    if (!code) return false;
+    /* Custom-scheme intent: the Sonariq app claims the "sonariq" scheme. */
+    window.location.href =
+      "intent://party/" + encodeURIComponent(code) +
+      "#Intent;scheme=sonariq;package=com.sonariq.app;end";
+    return true;
+  }
+
+  if (openApp()) {
+    /* If we're still here after a beat, the app isn't installed — show the fallback. */
+    setTimeout(function () {
+      opening.style.display = "none";
+      fallback.classList.add("show");
+    }, 2600);
+    document.getElementById("retry").addEventListener("click", openApp);
+  } else {
+    opening.style.display = "none";
+    fallback.classList.add("show");
+    document.getElementById("retry").style.display = "none";
+  }
+})();
+</script>
+</body>
+</html>

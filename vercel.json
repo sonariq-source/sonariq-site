@@ -1,0 +1,1 @@
+{"$schema":"https://openapi.vercel.sh/vercel.json","headers":[{"headers":[{"key":"Content-Type","value":"application/json"}],"source":"/.well-known/assetlinks.json"}],"rewrites":[{"destination":"/s.html","source":"/s/:id"},{"destination":"/party.html","source":"/party/:code"}]}

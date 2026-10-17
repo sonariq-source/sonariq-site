@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonariq — Music that moves with you</title>
+<meta name="description" content="Sonariq is a free, open-source music player for Android phone and TV — karaoke lyrics, listening parties, vibe autoplay, and a 7-band EQ.">
+<meta name="theme-color" content="#0d0a12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='10' width='3.2' height='12' rx='1.6' fill='%23ff6b5e'/%3E%3Crect x='9.2' y='5' width='3.2' height='22' rx='1.6' fill='%23c084fc'/%3E%3Crect x='14.4' y='1' width='3.2' height='30' rx='1.6' fill='%23ffffff'/%3E%3Crect x='19.6' y='8' width='3.2' height='16' rx='1.6' fill='%2322d3ee'/%3E%3Crect x='24.8' y='4' width='3.2' height='24' rx='1.6' fill='%23c084fc'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- shared gradient defs for stroked icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff6b5e"/><stop offset="0.5" stop-color="#c084fc"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Sonariq home">
+      <svg class="wave" viewBox="0 0 32 32" fill="#fff" aria-hidden="true">
+        <rect x="4" y="10" width="3.2" height="12" rx="1.6"/><rect x="9.2" y="5" width="3.2" height="22" rx="1.6"/><rect x="14.4" y="1" width="3.2" height="30" rx="1.6"/><rect x="19.6" y="8" width="3.2" height="16" rx="1.6"/><rect x="24.8" y="4" width="3.2" height="24" rx="1.6"/>
+      </svg>
+      Sonariq
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#together">Listen Together</a>
+      <a href="#share">Share</a>
+      <a href="#download">Download</a>
+    </nav>
+    <a class="btn btn-ghost btn-sm nav-cta" href="https://github.com/sonariq-source/Sonariq" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      GitHub
+    </a>
+    <button class="burger" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<div class="mobile-menu">
+  <a href="#features">Features</a>
+  <a href="#together">Listen Together</a>
+  <a href="#share">Share</a>
+  <a href="#download">Download</a>
+  <a href="https://github.com/sonariq-source/Sonariq" target="_blank" rel="noopener">GitHub</a>
+</div>
+
+<main id="top">
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div>
+    <canvas id="wave" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow reveal"><span class="dot"></span>Free · Open source · No account needed</span>
+        <h1 class="reveal" style="--d:.08s">Music that<br><span class="grad-text">moves with you.</span></h1>
+        <p class="lead reveal" style="--d:.16s">Sonariq is a free, open-source music player for Android — karaoke lyrics that follow every word, listening parties with friends, and a vibe that never stops. On your phone and your TV.</p>
+        <div class="hero-ctas reveal" style="--d:.24s">
+          <a class="btn btn-primary" href="https://github.com/sonariq-source/Sonariq/releases/latest" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+            Get Sonariq for Phone
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/sonariq-source/Sonariq/releases/latest" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M9 21h6"/></svg>
+            Sonariq for TV
+          </a>
+        </div>
+        <p class="hero-note reveal" style="--d:.32s">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
+          Free forever&nbsp;&nbsp;·&nbsp;&nbsp;No sign-up&nbsp;&nbsp;·&nbsp;&nbsp;GPL-3.0 open source
+        </p>
+      </div>
+      <div class="phone-stage reveal" style="--d:.2s">
+        <div class="chip chip-1"><span class="eq"><i></i><i></i><i></i><i></i></span>Word-by-word karaoke</div>
+        <div class="phone" role="img" aria-label="Sonariq Now Playing screen mockup">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="np-top"><span>Now playing</span><span style="color:#22d3ee">● Live</span></div>
+            <div class="np-art"></div>
+            <div class="np-title">Midnight Drive</div>
+            <div class="np-artist">Neon Coast</div>
+            <div class="np-progress"><i></i></div>
+            <div class="np-times"><span>1:24</span><span>3:47</span></div>
+            <div class="np-controls">
+              <svg viewBox="0 0 24 24"><path d="M6 5h2.5v14H6zM19 5v14L9.5 12z"/></svg>
+              <span class="np-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              <svg viewBox="0 0 24 24"><path d="M15.5 5H18v14h-2.5zM5 5v14l9.5-7z"/></svg>
+            </div>
+            <div class="np-lyric">We chase the <b>neon lights</b><br>down empty streets tonight…</div>
+          </div>
+        </div>
+        <div class="chip chip-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M17.5 14.2a6.5 6.5 0 0 1 4 5.8"/></svg>
+          Party · 3 listening
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <div class="stats">
+    <div class="wrap">
+      <div class="stats-row reveal">
+        <div class="stat"><b data-count="17">0</b><span>lyric sources raced for every song</span></div>
+        <div class="stat"><b data-count="7">0</b><span>band equalizer with presets</span></div>
+        <div class="stat"><b data-count="2">0</b><span>apps — one for phone, one for TV</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FEATURES ============ -->
+  <section id="features">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><span class="dot"></span>Features</span>
+        <h2>Everything a music player <span class="grad-text">should be.</span></h2>
+        <p>No subscriptions, no accounts, no noise — just music, done right.</p>
+      </div>
+      <div class="feat-grid">
+        <article class="feat tilt reveal" style="--d:0s">
+          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1"/><path d="M12 18v4"/></svg></div>
+          <h3>Karaoke lyrics</h3>
+          <p>Lyrics that keep up with the song. Word-by-word highlighting when the timing is there, clean line sync when it isn't — plus search, copy, and lyrics saved for offline.</p>
+        </article>
+        <article class="feat tilt reveal" style="--d:.08s">
+          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M17.5 14.2a6.5 6.5 0 0 1 4 5.8"/></svg></div>
+          <h3>Listen Together</h3>
+          <p>Start a party and listen in sync with friends, wherever they are. Share one link and everyone's in — no accounts, just music.</p>
+        </article>
+        <article class="feat tilt reveal" style="--d:.16s">
+          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 10v4"/></svg></div>
+          <h3>Vibe autoplay</h3>
+          <p>When the queue runs low, Sonariq reads the vibe — the sound, the mood, your habits — and keeps the music flowing. It never just stops.</p>
+        </article>
+        <article class="feat tilt reveal" style="--d:0s">
+          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h10M18 8h2M4 16h4M12 16h8"/><circle cx="16" cy="8" r="2.2"/><circle cx="10" cy="16" r="2.2"/></svg></div>
+          <h3>7-band EQ</h3>
+          <p>Shape your sound with a real 7-band equalizer, hand-tuned presets, and tone controls that actually do something.</p>
+        </article>
+        <article class="feat tilt reveal" style="--d:.08s">
+          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg></div>
+          <h3>Offline mode</h3>
+          <p>Download songs and their lyrics for the road. Smart downloads keep your library fresh over Wi-Fi. Truly offline, truly yours.</p>
+        </article>
+        <article class="feat tilt reveal" style="--d:.16s">
+          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M9 21h6"/></svg></div>
+          <h3>Android TV app</h3>
+          <p>The full Sonariq experience on the big screen — browse with your remote and sing along to giant karaoke lyrics.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LISTEN TOGETHER ============ -->
+  <section id="together" class="spot">
+    <div class="wrap spot-grid">
+      <div>
+        <div class="sec-head reveal" style="margin-bottom:0">
+          <span class="eyebrow"><span class="dot"></span>Listen Together</span>
+          <h2>One link. <span class="grad-text">Everyone's in.</span></h2>
+          <p>Parties live on Sonariq links. Share yours anywhere — messages, group chats, anywhere links work.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal" style="--d:.05s"><div class="step-n">1</div><div><h4>Start a party</h4><p>Tap Listen Together in the app and you're hosting.</p></div></div>
+          <div class="step reveal" style="--d:.12s"><div class="step-n">2</div><div><h4>Share your link</h4><p>Send your Sonariq party link to friends — it works anywhere links work.</p></div></div>
+          <div class="step reveal" style="--d:.19s"><div class="step-n">3</div><div><h4>They're in</h4><p>One tap opens the app straight into the party. No app yet? The link takes them to the download page instead.</p></div></div>
+        </div>
+      </div>
+      <div class="reveal" style="--d:.15s">
+        <div class="link-card">
+          <span class="eyebrow" style="margin-bottom:0">Your party link looks like this</span>
+          <div class="link-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg>
+            <span><span class="ld" data-domain>sonariq.link</span><span class="lp">/party/X7K2Q9</span></span>
+          </div>
+          <p class="link-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
+            Links open the app directly when it's installed — otherwise they land on a Sonariq download page.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHARE ============ -->
+  <section id="share">
+    <div class="wrap share-grid">
+      <div class="share-visual reveal">
+        <div class="msg them">you have GOT to hear this song</div>
+        <div class="msg me"><span class="songlink"><span data-domain>sonariq.link</span>/s/abc123XYZ</span><br>tap it — it opens right in the app</div>
+        <div class="msg them">opening now… okay this is my whole personality now</div>
+      </div>
+      <div>
+        <div class="sec-head reveal" style="margin-bottom:0">
+          <span class="eyebrow"><span class="dot"></span>Sharing</span>
+          <h2>Every song <span class="grad-text">gets a link.</span></h2>
+          <p>Share any song as a Sonariq link. Friends with the app open it instantly and start listening. Everyone else gets a beautiful page, one tap away from downloading Sonariq.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal" style="--d:.05s"><div class="step-n">1</div><div><h4>Copy the link</h4><p>Hit share on any song and copy its Sonariq link.</p></div></div>
+          <div class="step reveal" style="--d:.12s"><div class="step-n">2</div><div><h4>Send it anywhere</h4><p>Messages, posts, group chats — the link carries the song with it.</p></div></div>
+          <div class="step reveal" style="--d:.19s"><div class="step-n">3</div><div><h4>They press play</h4><p>The app opens straight to the song. No app? They land here first.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOWNLOAD ============ -->
+  <section id="download" class="spot">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow"><span class="dot"></span>Download</span>
+        <h2>Get <span class="grad-text">Sonariq.</span></h2>
+        <p>Free forever. Pick your device — both install straight from GitHub, no store needed.</p>
+      </div>
+      <div class="dl-grid">
+        <div class="dl-card phone reveal tilt">
+          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+          <h3>Sonariq for Phone</h3>
+          <p>The full player for your Android phone — karaoke lyrics, listening parties, vibe autoplay, EQ, offline mode, and widgets.</p>
+          <a class="btn btn-primary" href="https://github.com/sonariq-source/Sonariq/releases/latest" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+            Download phone APK
+          </a>
+        </div>
+        <div class="dl-card tv reveal tilt" style="--d:.1s">
+          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M9 21h6"/></svg></div>
+          <h3>Sonariq for TV</h3>
+          <p>The big-screen experience for Android TV — browse with your remote, hand playback to the TV, and sing along to giant karaoke lyrics.</p>
+          <a class="btn btn-primary" href="https://github.com/sonariq-source/Sonariq/releases/latest" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+            Download TV APK
+          </a>
+        </div>
+      </div>
+      <p class="dl-note reveal">Both APKs always carry the latest release · Open source (GPL-3.0) · Installing over an older version keeps everything.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <svg class="wave" viewBox="0 0 32 32" fill="#fff" aria-hidden="true">
+            <rect x="4" y="10" width="3.2" height="12" rx="1.6"/><rect x="9.2" y="5" width="3.2" height="22" rx="1.6"/><rect x="14.4" y="1" width="3.2" height="30" rx="1.6"/><rect x="19.6" y="8" width="3.2" height="16" rx="1.6"/><rect x="24.8" y="4" width="3.2" height="24" rx="1.6"/>
+          </svg>
+          Sonariq
+        </a>
+        <p>A free, open-source music player by Sonariq studio — for the love of the song.</p>
+      </div>
+      <div class="foot-links">
+        <h5>Product</h5>
+        <a href="#features">Features</a>
+        <a href="#together">Listen Together</a>
+        <a href="#share">Share</a>
+        <a href="#download">Download</a>
+      </div>
+      <div class="foot-links">
+        <h5>Project</h5>
+        <a href="https://github.com/sonariq-source/Sonariq" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          GitHub
+        </a>
+        <a href="https://github.com/sonariq-source/Sonariq/releases/latest" target="_blank" rel="noopener">Releases</a>
+        <a href="https://github.com/sonariq-source/Sonariq" target="_blank" rel="noopener">Source code</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Sonariq is free and open-source software, forked from the open-source BitChord project and released under the GNU General Public License v3.0.</p>
+      <p>Sonariq is an independent project by Sonariq studio. It is not affiliated with, endorsed by, or connected to any streaming service, platform, or device manufacturer.</p>
+      <div class="copy"><span>© 2026 Sonariq studio. All rights reserved.</span><span>Made for the love of the song.</span></div>
+    </div>
+  </div>
+</footer>
+
+<script src="/site.js"></script>
+</body>
+</html>
