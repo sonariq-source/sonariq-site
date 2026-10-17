@@ -127,7 +127,7 @@ a { color: inherit; text-decoration: none; }
 /* Phone mockup */
 .phone-stage { position: relative; display: flex; justify-content: center; }
 .phone {
-  width: min(300px, 72vw); aspect-ratio: 9 / 19.2;
+  width: min(300px, 72vw); aspect-ratio: 5 / 8;
   background: #08060c; border-radius: 44px; padding: 12px;
   border: 1px solid rgba(255,255,255,0.14);
   box-shadow: 0 40px 90px rgba(0,0,0,0.6), 0 0 0 8px rgba(255,255,255,0.03), 0 0 70px rgba(192,132,252,0.16);
@@ -139,6 +139,11 @@ a { color: inherit; text-decoration: none; }
   width: 100%; height: 100%; border-radius: 34px; overflow: hidden;
   background: linear-gradient(165deg, #1c1428 0%, #0d0a12 60%, #0a0d16 100%);
   display: flex; flex-direction: column; padding: 18px 16px 20px; position: relative;
+}
+/* Real app screenshot in the hero phone — the frame hugs the shot. */
+.phone-screen--real { padding: 0; }
+.phone-screen--real img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
 }
 .phone-notch { position: absolute; top: 22px; left: 50%; transform: translateX(-50%); width: 96px; height: 24px; background: #08060c; border-radius: 999px; z-index: 3; }
 .np-top { display: flex; align-items: center; justify-content: space-between; margin: 26px 2px 14px; color: var(--muted); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; }
