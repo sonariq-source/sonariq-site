@@ -294,6 +294,7 @@ section { padding: 96px 0; position: relative; }
 .dl-card::after { content: ""; position: absolute; width: 340px; height: 340px; border-radius: 50%; filter: blur(80px); opacity: 0.35; top: -140px; right: -120px; pointer-events: none; }
 .dl-card.phone::after { background: radial-gradient(circle, rgba(163,230,53,0.6), transparent 65%); }
 .dl-card.tv::after { background: radial-gradient(circle, rgba(52,211,153,0.5), transparent 65%); }
+.dl-card.iphone::after { background: radial-gradient(circle, rgba(255,127,95,0.55), transparent 65%); }
 .dl-icon { width: 60px; height: 60px; border-radius: 18px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.06); border: 1px solid var(--stroke); margin-bottom: 22px; }
 .dl-icon svg { width: 28px; height: 28px; stroke: var(--text); }
 .dl-card h3 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 8px; }
